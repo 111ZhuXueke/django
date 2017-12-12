@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pcap</title>
+</head>
+<body>
+    <form>
+        <thead>
+            <tr>
+                <th>ptime</th>
+                <th>pdata</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for foo in pcaplist %}
+                <tr>
+                    <td>{{ foo.ptime }}</td>
+                    <td>{{ foo.pdata }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </form>
+</body>
+</html>

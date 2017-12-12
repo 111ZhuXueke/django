@@ -1,0 +1,2 @@
+python manage.py makemigrations  更新model
+python manage.py migrate	应用程序更新

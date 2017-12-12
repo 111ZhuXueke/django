@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+</head>
+<body>
+    Hello {{ request.session.user }}
+    <form>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>用户名</th>
+                <th>地址</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for foo in userlist %}
+                <tr>
+                    <td>{{ foo.id }}</td>
+                    <td>{{ foo.name }}</td>
+                    <td>{{ foo.address }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </form>
+</body>
+</html>
