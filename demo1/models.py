@@ -1,4 +1,5 @@
 from django.db import models
+from abc import ABCMeta,abstractmethod,abstractproperty
 
 # Create your models here.
 from django.db import models
@@ -18,3 +19,25 @@ class info(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
+class Animal(metaclass=ABCMeta):
+    def __init__(self,name):
+        self.name = name;
+
+    @abstractmethod
+    def run(self):
+        print(self.name + " is run")
+
+class Dog(Animal):
+    def __init__(self, name):
+        self.name = name
+
+    def run(self):
+        print(self.name)
+
+class Cat(Animal):
+    def __init__(self, name):
+        self.name = name
+
