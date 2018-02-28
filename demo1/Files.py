@@ -25,3 +25,10 @@ def high(h):
         count = count + h * 2
     print("总距离 %f %f" % (count,h))
 high(100)
+
+dic1 ={}
+dic1["str"] = "str"
+
+list =[1,2,5]
+for i in list:
+    print(i)
