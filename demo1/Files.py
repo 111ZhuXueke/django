@@ -9,4 +9,19 @@ def fun():
         print("已结束！")
     except BaseException:
         print("文件写入失败，已退出！")
-fun()
+# fun()
+
+def digui(n):
+    if n < 3:
+        return 1
+    else:
+        return digui(n-1) + digui(n-2)
+# print(digui(8))
+
+def high(h):
+    count = h
+    for i in range(10):
+        h = h / 2
+        count = count + h * 2
+    print("总距离 %f %f" % (count,h))
+high(100)
