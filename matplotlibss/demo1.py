@@ -67,10 +67,10 @@ plt.rcParams['axes.unicode_minus'] = False
 
 # plt.annotate() 文本注释
 
-ax = plt.subplot(111)
-t = n.arange(0.0,5.0,0.01)
-s = n.cos(2*n.pi*t)
-line, = plt.plot(t,s,lw=2)
-plt.annotate('local max',xy = (2,1),xytext=(3,1.5),arrowprops=dict(facecolor='black',shrink=0.05),)
-plt.ylim(-2,2)
-plt.show()
+# ax = plt.subplot(111)
+# t = n.arange(0.0,5.0,0.01)
+# s = n.cos(2*n.pi*t)
+# line, = plt.plot(t,s,lw=2)
+# plt.annotate('local max',xy = (2,1),xytext=(3,1.5),arrowprops=dict(facecolor='black',shrink=0.05),)
+# plt.ylim(-2,2)
+# plt.show()
