@@ -279,7 +279,11 @@ pets = [dog,cat]
 # print(count+1)
 
 # names = ['Tom','Billy','Jefferson',"Andrew","Wesley","Steven","joe","Alice",'Jill',"Ana","Wendy","Jennifer","Sherry",'Eva']
-# newlist1 = []
+#
+# newlist1 = [(x) for x in names if len(x) >4]
+# newlist2 = [(x) for x in newlist1 if len(x) >5]
+# print(newlist1)
+# print(newlist2)
 # newlist2 = []
 # for i in names:
 #     if len(i) > 4:
@@ -337,21 +341,245 @@ pets = [dog,cat]
 # for i in range(10):
 #     print(1)
 
-# result1 = random.randint(1,3)
-# num1 = int(input("请输入剪刀(1)、石头(2)、布(3)："))
-# while 1==1:
-#     if num1 - result1 == 1 or num1 - result1 == -2:
-#         print("胜利了")
-#     elif num1 - result1 == -1 or num1 - result1 == 2:
-#         print("输了")
-#     else:
-#         print("平局")
-#     vals = input("输入y继续，输入n退出...")
-#     if vals == "n":
-#         break;
-#     result1 = random.randint(1, 3)
-#     num1 = int(input("请输入剪刀(1)、石头(2)、布(3)："))
-
 
 # list = [(x,y,z)for x in range(1,5) for y in range(1,5) for z in range(1,5) if (x*100+y*10+z)]
 # print(list)
+
+
+#
+# list=[]
+# recent_Hours= input('请输入时间（小时：分钟：秒）：')
+# list.append(recent_Hours.split(':'))
+# hours=list[0][0]
+# minutes=list[0][1]
+# seconds=list[0][2]
+# def new_Hours(a,b,c):
+#     s=((a*3600+b*60+c)+330)/3600
+#     print(s)
+# new_Hours(int(hours),int(minutes),int(seconds))
+
+# 4.约瑟夫环
+# （1）一群人围在一起坐成环状（如：N）
+# （2）从某个编号开始报数（如：K）
+# （3）数到某数（如：M）的时候，此人出列，下一个人重新报数
+# （4）一直循环，直到剩余2个人，约瑟夫环结束
+
+# def Joseph_ring(N,K,M): #N为总人数K为开始计数的数M为从开始报数的人到出列人之间的个数
+#     list_1=list(range(1,N+1))   #遍历列表元素  从第一个人到第N个人
+#     delete=K-1  #用于计算出列的人的下标
+#     while True:
+#         delete=(delete+M-1)%len(list_1)     #用于计算有人出列后下一个应该出列人的位置
+#         del (list_1[delete])
+#         if len(list_1)==2:      #当人数剩余2人，约瑟夫环结束
+#             print(list_1)
+#             break
+# Joseph_ring(9,2,3)
+
+
+# class Restaurant():
+#     def __init__(self,restaurant_name,cuisine_type,number_served=0):
+#         self.restaurant_name=restaurant_name
+#         self.cuisine_type=cuisine_type
+#         self.number_served=number_served
+#     def describe_restaurant(self):
+#         print('饭店名：%s  烹饪类型：%s'%(self.restaurant_name,self.cuisine_type))
+#     def open_restaurant(self):
+#         print('本餐馆正在营业！%s '%self.number_served)
+# res= Restaurant('重庆小面','川菜')
+# res.describe_restaurant()
+# res.open_restaurant()
+# 012  112
+# def fib(n):
+#     list1 = []
+#     for i in range(0,n):
+#         if i == 0:
+#             list1.append(0)
+#         elif i == 1:
+#             list1.append(1)
+#         else:
+#             list1.append(list1[i-1]+list1[i-2])
+#     return list1
+# print(fib(10))
+
+
+
+
+# 1.斐波那契数列（Fibonacci sequence）指的是这样一个数列：1、1、2、3、5、8、13、21、34、
+# ……在数学上，斐波纳契数列以如下被以递归的方法定义：F(0)=0，F(1)=1, F(n)=F(n-1)+F(n-2)
+# （n>=2，n∈N*）
+
+# def fib(n):
+#     if n==0:
+#         return 0
+#     elif n==1:
+#         return 1
+#     elif n>=2:
+#         return fib(n-1)+fib(n-2)
+# print(fib(4))
+
+# class testss:
+#
+#     def __init__(self):
+#         ''' 初始化 '''
+#         self.name = "zxk"
+#         self.age = 11
+#     def getMessage(self):
+#         ''' 获取信息 '''
+#         print(self.name,self.age)
+# print(testss.__dict__)
+
+# class dictclass():
+#     def __init__(self,dict1):
+#         self.dict1=dict1
+#     def del_dict(self,key):
+#         del self.dict1[key]
+#         return self.dict1
+#     def get_dict(self,key):
+#         key_list=self.dict1.keys()
+#         if key in key_list:
+#             return key
+#         else:
+#             print('not found')
+#     def get_key(self):
+#         return self.dict1.keys()
+#     def update_dict(self,dict2):
+#         self.dict1.update(dict2)
+#         return self.dict1
+# dict1={'name':'王晓明','age':'18','hate':'c'}
+# dict2={'hobby':'python','address':'上海'}
+# dict=dictclass(dict1)
+# print(dict.del_dict('hate'))
+# dict.get_dict('hobby')
+# print(dict.get_key('age'))
+# print(dict.update_dict(dict2))
+
+
+# 题目9：定义一个字典类：dictclass。
+# 完成下面的功能：     
+# dict = dictclass({你需要操作的字典对象})   
+# 1 删除某个key    del_dict(key)     
+# 2 判断某个键是否在字典里，如果在返回键对应的值，不存在则返回"not found"    get_dict(key)   
+# 3 返回键组成的列表：返回类型;(list)    get_key()   
+# 4 合并字典，并且返回合并后字典的values组成的列表。
+#   返回类型:(list) update_dict({要合并的字典})
+
+# class dictclass:
+#     # 初始化方法
+#     def __init__(self,dict1):
+#         self.dict1 = dict1;
+#
+#     # 删除指定key
+#     def del_dict(self,key):
+#         del self.dict1[key]
+#         return self.dict1;
+#
+#     # 键是否存在
+#     def get_dict(self,key):
+#         try:
+#             return self.dict1[key];
+#         except KeyError:
+#             return "not found"
+#
+#     # 返回键列表
+#     def get_key(self):
+#         return list(self.dict1.keys());
+#
+#     # 合并列表，返回合并的列表values 值列表
+#     def update_dict(self,targetDic):
+#         result = self.dict1.copy();
+#         result.update(targetDic);
+#         return list(result.values());
+#
+# dict1 = {"name":"zxk","age":"18"}
+# dict2 = {"address":"shanghai"}
+# dict3 = dictclass(dict1);
+# print("删除 age key：" + str(dict3.del_dict("age")));
+# print("age 是否存在：" + str(dict3.get_dict("age")));
+# print(dict3.get_key())
+# print(dict3.update_dict(dict2))
+#
+# class bank():
+#     dict={}
+#     def __init__(self):
+#         print('欢迎光临')
+#     def new_Account(self):  #开户操作
+#         print('欢迎选择开户服务')
+#         user_name=input('请输入用户名：')
+#         id_card=input('开户卡号：')
+#         for k,v in bank.dict.items():
+#             print(v)
+#             if id_card in v:
+#                 print('卡号重复，请重新输入卡号：')
+#         password=input('请输入密码：')
+#         flag=True   #用于判断while循环
+#         while flag:
+#             money=input('请输入您开户的金额（不低于50元，金额将转做您的余额）：')
+#             if int(money) <50:
+#                 print('金额小于50，请重新输入')
+#             else:
+#                 print('恭喜你开户成功！用户名：%s 卡号：%d 密码：%d 余额：%d元'%(user_name,int(id_card),int(password),int(money)))
+#                 bank.dict[user_name]=[id_card,password,int(money)]  #将新信息储存在字典bank.dict中
+#                 flag=False
+#
+#     def save(self):  # 存钱服务
+#         flag = True  # 用于判断while循环
+#         while flag:
+#             id_card = input('开户卡号：')
+#             password = input('请输入密码：')
+#             if id_card == '' or password == '':
+#                 print('账号或密码为空 请重新输入')
+#             else:
+#                 for k, v in bank.dict.items():
+#                     if id_card in v and password in v[1]:  #
+#                         flag = False
+#                     else:
+#                         print('该用户未开户')
+#         for k, v in bank.dict.items():  # 存钱流程
+#             if id_card in v:
+#                 save_money = input('存款金额(只收取100元钞票):')
+#                 v[2] += int(save_money)
+#                 print('存款成功，余额%d' % v[2])
+#                 break
+#
+#     def get(self):  # 取钱服务
+#         flag = True  # 用于判断while循环
+#         while flag:  # 登录账户
+#             id_card = input('开户卡号：')
+#             password = input('请输入密码：')
+#             if id_card == '' or password == '':
+#                 print('账号或密码为空 请重新输入')
+#             else:
+#                 for k, v in bank.dict.items():
+#                     if id_card in v and password in v[1]:
+#                         flag = False
+#                     else:
+#                         print('该用户未开户')
+#         flag = True
+#         for k, v in bank.dict.items():  # 取钱流程
+#             while flag:
+#                 get_money = int(input('取款金额（只提供100元钞票）：'))
+#                 if get_money <= v[2]:
+#                     v[2] -= get_money
+#                     print('取款成功，卡内余额为：%d' % v[2])
+#                     flag = False
+#                 else:
+#                     print('卡内余额不足，请重新输入')
+#
+#     def info(self):  # 查询服务
+#         question = input('是否查询所有用户信息（y是）：')
+#         if question == 'y':
+#             for k, v in bank.dict.items():
+#                 print('用户姓名：%s 卡号：%s 密码：%s 余额：%d' % (k, v[0], v[1], int(v[2])))
+#         else:
+#             user_name = input('输入需要查询的用户名：')
+#             for k, v in bank.dict.items():
+#                 if user_name == k:
+#                     print('用户名：%s卡号：%s 余额：%d ' % (user_name, v[0], int(v[2])))
+#                 else:
+#                     print('用户信息不存在')
+#
+#
+# bank1 = bank();
+#
+# bank1.new_Account();
+# bank1.new_Account();
